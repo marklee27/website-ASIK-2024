@@ -1,0 +1,373 @@
+:root{
+    --primary: #9DDE8B;
+    --bg: #051f25;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: rgb(249, 249, 245);
+    /* min-height: 2000px; */
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: #006769;
+    /* border-bottom: 1px solid #50B498; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #E6FF94;
+    font-style: italic;
+}
+
+.navbar .navbar-logo span {
+    color: var(--primary);
+    font-style: italic;
+}
+
+.navbar .navbar-nav a {
+    color: #9DDE8B;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0 1rem;
+    font-weight: 600;
+}
+
+.navbar .navbar-nav a:hover{
+    color: #E6FF94;
+}
+
+.navbar .navbar-nav a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #40A578;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.beranda{
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    background-image: url('mang9.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+.beranda .content h1{
+    font-size: 115px;
+    text-shadow: 1px, 1px, 3px rgba(5, 31, 37, 0.5);
+}
+
+.beranda::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(5, 31, 37) 3%, rgba(255, 255, 255, 0) 25%);
+}
+
+.beranda .content {
+    padding: 1.4rem 5%;
+    /* max-width: 50rem; */
+}
+
+.beranda .content h1 span{
+    color: #fbf98f;
+}
+
+img{
+    max-width: 320px;
+    float: left;
+    border-radius: 3%;
+    margin-right: 15px;
+}
+
+.wrapper{
+    margin: 30px auto;
+    width: 90%;
+    padding: 1.4rem 5%;
+}
+
+.text-box{
+    color: #ffffff;
+    text-align: justify;
+}
+
+.text-box h3{
+    color: #fdfdf9;
+    font-size: 2.8rem;
+    line-height: 4rem;
+}
+
+.text-box h3 span{
+    color: #fbf98f;
+}
+
+.genus h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    
+}
+
+.genus h2 span {
+    color: #fbf98f;
+}
+
+.genus {
+    padding: 5rem 5% 1.4rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.genus-card {
+    text-align: center;
+}
+
+.genus .row .genus-card img{
+    border-radius: 50%;  
+}
+
+.wrapper {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}  
+.card {
+    width: 330px;
+    height: 200px;
+    border: solid 3px #272727;
+    border-radius: 19px;
+    padding: 1.5rem;
+    background: white;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.4s ease-out;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    cursor: pointer;
+}
+.card:hover {
+    transform: translateY(20px);
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    transition: 0.5s;
+    opacity: 0;
+}
+.card:hover:before {
+    opacity: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+}
+
+.card .info {
+    position: relative;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+.card:hover .info {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.card .info h1 {
+    margin: 0px;
+}
+
+.card .info p {
+    letter-spacing: 1px;
+    font-size: 13px;
+    margin-top: 8px;
+    text-align: justify;
+}
+
+.card .info button {
+    padding: 0.6rem;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.card .info button:hover {
+    background: #93e5ab;
+    color: white;
+}
+
+.hitung{
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-image: url('mang4.jpg');
+    background-size: cover;
+    position: relative; 
+}
+
+.hitung .content h1{
+    font-size: 55px;
+    text-align: center;
+}
+
+/* .hitung::after {
+    content: '';
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+} */
+
+.hitung .content {
+    padding: 1.4rem 5%;
+}
+
+.hitung .content h1 span{
+    color: #fbf98f;
+}
+
+.prosedur .content h1 span{
+    color: #fbf98f;
+}
+
+img{
+    max-width: 320px;
+    float: left;
+    border-radius: 3%;
+    margin-right: 13px;
+}
+
+.hitung .content .btn{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    background: #E6FF94;
+    width: 90px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #051f25;
+    border-radius: 5px;
+}
+
+.prosedur{
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    background-image: url('mang1.webp');
+    background-size: cover;
+    position: relative; 
+    text-align: center;
+}
+
+.prosedur .content h1{
+    font-size: 50px;
+    text-shadow: 1px, 1px, 3px rgba(6, 39, 36, 0.5);
+}
+
+.prosedur::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(6, 39, 36) 3%, rgba(255, 255, 255, 0) 25%);
+}
+
+.wrapper .text-box h4{
+    font-size: 1.2rem;
+    margin-left: 3%;
+}
+
+.wrapper .text-box p1{
+    margin-left: 7%;
+    margin-right: 8%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wrapper .text-box p2{
+    margin-left: 5%;
+    margin-right: 8%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wrapper .text-box li{
+    margin-left: 7%;
+}
+
+.wrapper .text-box h5{
+    text-align: center;
+    font-size: 3rem;
+    margin-left: 3%;
+
+}
+
+.text-box h5{
+    color: #fdfdf9;
+    font-size: 2.8rem;
+    line-height: 4rem;
+}
+
+.text-box h5 span{
+    color: #fbf98f;
+}

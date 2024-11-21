@@ -1,0 +1,10 @@
+:root{
+    --primary: #9DDE8B;
+    --bg: rgb(6, 39, 36);
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: rgb(249, 249, 245);
+    /* min-height: 2000px; */
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Serapan Karbon Mangrove - Allometrik</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="beranda.html" class="navbar-logo">carbon<span>check</span></a>
+        <div class="navbar-nav">
+            <a href="beranda.html">Beranda</a>
+            <a href="prosedur.html">Prosedur</a>
+            <a href="hitung.html">Hitung</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br> <br>
+        <h2>Perhitungan Menggunakan Persamaan Allometrik</h2>
+        <form id="allometricForm">
+            <div class="form-group">
+                <label>Jenis Mangrove:</label>
+                <input type="text" id="spesies" required>
+            </div>
+
+            <div class="calculation-grid">
+                <!-- Perhitungan Biomassa -->
+                <div class="calculation-card">
+                    <h3>Biomassa</h3>
+                    <div class="form-group">
+                        <label>Diameter Batang (DBH) cm:</label>
+                        <input type="number" id="dbh" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Konstanta a:</label>
+                        <input type="number" id="a" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Konstanta b:</label>
+                        <input type="number" id="b" required>
+                    </div>
+                    <button type="button" onclick="calculateBiomass()">
+                        Hitung Biomassa
+                    </button>
+                    <p id="biomassResult" class="result"></p>
+                </div>
+
+                <!-- Perhitungan Fraksi Karbon -->
+                <div class="calculation-card">
+                    <h3>Fraksi Karbon</h3>
+                    <div class="form-group">
+                        <label>Massa Karbon (kg):</label>
+                        <input type="number" id="massaKarbon" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Massa Total Sampel (kg):</label>
+                        <input type="number" id="massaTotal" required>
+                    </div>
+                    <button type="button" onclick="calculateCarbonFraction()">
+                        Hitung Fraksi Karbon
+                    </button>
+                    <p id="carbonFractionResult" class="result"></p>
+                </div>
+
+                <!-- Perhitungan Stok Karbon -->
+                <div class="calculation-card">
+                    <h3>Stok Karbon</h3>
+                    <div class="form-group">
+                        <label>Biomassa (kg):</label>
+                        <input type="number" id="biomassInput" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Fraksi Karbon (%):</label>
+                        <input type="number" id="carbonFractionInput" required>
+                    </div>
+                    <button type="button" onclick="calculateCarbonStock()">
+                        Hitung Stok Karbon
+                    </button>
+                    <p id="carbonStockResult" class="result"></p>
+                </div>
+
+                <!-- Perhitungan Serapan Karbon per Pohon -->
+                <div class="calculation-card">
+                    <h3>Serapan Karbon per Pohon</h3>
+                    <div class="form-group">
+                        <label>Stok Karbon (kg):</label>
+                        <input type="number" id="stockInput" required>
+                    </div>
+                    <button type="button" onclick="calculateCarbonAbsorptionPerTree()">
+                        Hitung Serapan per Pohon
+                    </button>
+                    <p id="carbonAbsorptionPerTreeResult" class="result"></p>
+                </div>
+
+                <!-- Perhitungan Serapan Karbon per Hektar -->
+                <div class="calculation-card">
+                    <h3>Serapan Karbon per Hektar</h3>
+                    <div class="form-group">
+                        <label>Kerapatan Pohon (pohon/ha):</label>
+                        <input type="number" id="density" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Stok Karbon (kg/pohon):</label>
+                        <input type="number" id="stockInputHectar" required>
+                    </div>
+                    <button type="button" onclick="calculateCarbonAbsorptionPerHectar()">
+                        Hitung Serapan per Hektar
+                    </button>
+                    <p id="carbonAbsorptionPerHectarResult" class="result"></p>
+                </div>
+            </div>
+        </form>
+
+        <div class="visualization-section">
+            <h3>Visualisasi Hasil</h3>
+            <canvas id="carbonChartAllo"></canvas>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Kalkulator Karbon Mangrove</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

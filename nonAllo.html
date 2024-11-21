@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Serapan Karbon Mangrove - Non Allometrik</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="beranda.html" class="navbar-logo">carbon<span>check</span></a>
+        <div class="navbar-nav">
+            <a href="beranda.html">Beranda</a>
+            <a href="prosedur.html">Prosedur</a>
+            <a href="hitung.html">Hitung</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- <h1>Kalkulator Serapan Karbon Mangrove - Non Allometrik</h1> -->
+        <br> <br>
+        <h2>Perhitungan Tanpa Persamaan Allometrik</h2>
+        <form id="nonAllometricForm">
+            <div class="form-group">
+                <label>Jenis Mangrove:</label>
+                <input type="text" id="jenis" required>
+            </div>
+
+            <div class="calculation-grid">
+                <div class="calculation-card">
+                    <h3>Biomassa</h3>
+                    <div class="form-group">
+                        <label>Berat Kering (kg):</label>
+                        <input type="number" id="dryWeight" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Berat Basah (kg):</label>
+                        <input type="number" id="wetWeight" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Berat Basah Sampel (kg):</label>
+                        <input type="number" id="totalWetWeight" required>
+                    </div>
+                    <button type="button" onclick="calculateBiomassNonAllometric()">
+                        Hitung Biomassa
+                    </button>
+                    <p id="biomassNonAllometricResult" class="result"></p>
+                </div>
+
+                <div class="calculation-card">
+                    <h3>Fraksi Karbon</h3>
+                    <div class="form-group">
+                        <label>Massa Karbon (kg):</label>
+                        <input type="number" id="carbonMass" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Massa Total Sampel (kg):</label>
+                        <input type="number" id="totalMass" required>
+                    </div>
+                    <button type="button" onclick="calculateCarbonFractionNonAllometric()">
+                        Hitung Fraksi Karbon
+                    </button>
+                    <p id="carbonFractionNonAllometricResult" class="result"></p>
+                </div>
+
+                <div class="calculation-card">
+                    <h3>Stok Karbon</h3>
+                    <div class="form-group">
+                        <label>Biomassa (kg):</label>
+                        <input type="number" id="biomassInputNonAllometric" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Fraksi Karbon (%):</label>
+                        <input type="number" id="carbonFractionInputNonAllometric" required>
+                    </div>
+                    <button type="button" onclick="calculateCarbonStockNonAllometric()">
+                        Hitung Stok Karbon
+                    </button>
+                    <p id="carbonStockNonAllometricResult" class="result"></p>
+                </div>
+
+                <div class="calculation-card">
+                    <h3>Serapan Karbon per Pohon</h3>
+                    <div class="form-group">
+                        <label>Stok Karbon (kg):</label>
+                        <input type="number" id="stockInputNonAllometric" required>
+                    </div>
+                    <button type="button" onclick="calculateCarbonAbsorptionPerTreeNonAllometric()">
+                        Hitung Serapan per Pohon
+                    </button>
+                    <p id="carbonAbsorptionPerTreeNonAllometricResult" class="result"></p>
+                </div>
+
+                <div class="calculation-card">
+                    <h3>Serapan Karbon per Hektar</h3>
+                    <div class="form-group">
+                        <label>Kerapatan Pohon (pohon/ha):</label>
+                        <input type="number" id="densityNonAllometric" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Stok Karbon (kg/pohon):</label>
+                        <input type="number" id="stockInputHectarNonAllometric" required>
+                    </div>
+                    <button type="button" onclick="calculateCarbonAbsorptionPerHectarNonAllometric()">
+                        Hitung Serapan per Hektar
+                    </button>
+                    <p id="carbonAbsorptionPerHectarNonAllometricResult" class="result"></p>
+                </div>
+            </div>
+        </form>
+        
+        <div class="visualization-section">
+            <h3>Visualisasi Hasil</h3>
+            <canvas id="carbonChart"></canvas>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Kalkulator Karbon Mangrove</p>
+    </footer>
+
+    <script src="script2.js"></script>
+</body>
+</html>

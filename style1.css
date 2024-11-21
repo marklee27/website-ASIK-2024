@@ -1,0 +1,180 @@
+Resetting the default margin and padding
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    /* font-family: 'Arial', sans-serif; */
+    background-color: #f4f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation styling */
+nav {
+    background-color: #00796b;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: #ffeb3b;
+}
+
+nav .nav-links a.active {
+    color: #ffeb3b;
+}
+
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+h1, h2 {
+    color: #00796b;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #00796b;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; font-size: 1em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+.result {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #00796b;
+}
+
+/* Calculation section grid */
+.calculation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Calculation card styling */
+.calculation-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.calculation-card h3 {
+    color: #006769;
+    margin-bottom: 15px;
+}
+
+/* Button styling for sections */
+.button {
+    background-color: #006769;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #006769;
+}
+
+/* Visualization section styling */
+.visualization-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.visualization-section canvas {
+    width: 100%;
+    height: 400px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background-color: #006769;
+    color: white;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+p {
+    text-align: justify;
+}
